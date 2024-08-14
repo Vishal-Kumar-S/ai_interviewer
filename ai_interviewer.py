@@ -1,11 +1,8 @@
 import streamlit as st
 import pandas as pd
 from streamlit_mic_recorder import speech_to_text
-# from openai import OpenAI
 import google.generativeai as genai
 
-# Initialize OpenAI API
-# client = OpenAI(api_key=open("api_key.txt", "r").read().strip())
 
 genai.configure(api_key="AIzaSyAa2xTKiBXA9QbPNYAXZEvyczDCBftMxL4")
 
@@ -81,23 +78,7 @@ if st.session_state.question_index >= 0:
                     "clarity, and how it can be improved?"
                 )
 
-                # # Call to OpenAI API for feedback
-                # completion = client.chat.completions.create(
-                #     model="gpt-3.5-turbo",
-                #     messages=[
-                #         {
-                #             "role": "system",
-                #             "content": "You are an AI Interviewer, designed to assess and provide feedback on technical questions based on user responses."
-                #         },
-                #         {
-                #             "role": "user",
-                #             "content": prompt
-                #         }
-                #     ]
-                # )
 
-                # # Extract and display the feedback
-                # feedback_content = completion.choices[0].message.content
 
                 model = genai.GenerativeModel('gemini-1.5-flash')
 
